@@ -1,0 +1,28 @@
+@charset 'utf-8';
+@import "~common/scss/variable";
+
+@mixin border-top-1px($color){
+  position: relative;
+  &:after{
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    content: " ";
+    width: 100%;
+    border-top: 1px solid $color;
+  }
+}
+
+// 父辈元素有边距，子元素不需要
+@mixin no-lr-space(){
+  margin-left: -$lr-space;
+  margin-right: -$lr-space;
+}
+
+// 默认左右内边距
+@mixin lr-space(){
+  padding-right: $lr-space;
+  padding-left: $lr-space;
+}
+
